@@ -237,8 +237,13 @@ index.html
 これを商用環境用にビルドする時はこうする。
 ```
 $ jspm bundle-sfx --skip-source-maps --minify app js/app.js
- 
- HTMLはこうなる。
+```
+
+ソースマップを利用する場合は`--skip-source-maps`を外したほうがいいでしょう。
+
+
+HTMLはこうなる。
+
 ```
 <!DOCTYPE html>
 <html>
@@ -249,3 +254,5 @@ $ jspm bundle-sfx --skip-source-maps --minify app js/app.js
   </body>
 </html>
 ```
+
+まだ途中です。
