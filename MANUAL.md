@@ -86,7 +86,7 @@
 名前は適当です。
 
 ```
-$ mkdir ~/devfront; cd $_
+$ mkdir ~/dfront; cd $_
 ```
 
 ## node.jsのインストール
@@ -120,7 +120,7 @@ Use `npm install <pkg> --save` afterwards to install a package and
 save it as a dependency in the package.json file.
 
 Press ^C at any time to quit.
-name: (devfront)
+name: (dfront)
 version: (0.0.0)
 description:
 entry point: (index.js)
@@ -129,10 +129,10 @@ git repository:
 keywords:
 author:
 license: (BSD)
-About to write to /home/vagrant/devfront/package.json:
+About to write to /vagrant/dfront/package.json:
 
 {
-  "name": "devfront",
+  "name": "dfront",
   "version": "0.0.0",
   "description": "",
   "main": "index.js",
