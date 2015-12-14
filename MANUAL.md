@@ -249,7 +249,7 @@ $ jspm bundle-sfx --skip-source-maps --minify app js/app.js
 
 この場合、HTMLはJSファイルを1つだけ読みこむことで自動的にスクリプトが開始されます。
 
-```
+```html
 <!DOCTYPE html>
 <html>
   <head>
@@ -262,4 +262,16 @@ $ jspm bundle-sfx --skip-source-maps --minify app js/app.js
 </html>
 ```
 
-まだ途中です。
+### これからやること
+
+* stylusでスタイル書く
+* jsのテンプレートエンジン何か使う
+* gulpのタスク書く
+ * build
+ * watch
+ * CSSスプライト
+ * 画像圧縮
+ * CSS圧縮
+ * JS圧縮
+ * エラー時にデスクトップ通知
+* セットアップからビルドまでnpm run-scriptで全部出来るようにする
