@@ -242,7 +242,7 @@ index.html
 
 これを商用環境用にビルドする時は`bundle-sfx`コマンドを使います。
 ```
-$ jspm bundle-sfx --skip-source-maps --minify app js/app.js
+$ jspm bundle-sfx --skip-source-maps --minify app dst/js/app.js
 ```
 
 ソースマップを利用する場合は`--skip-source-maps`を外したほうがいいでしょう。
