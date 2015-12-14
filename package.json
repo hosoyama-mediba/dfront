@@ -28,8 +28,8 @@
   "license": "BSD",
   "jspm": {
     "directories": {
-      "baseURL": "htdocs/src/js",
-      "packages": "htdocs/src/js/vendor"
+      "baseURL": "src/js",
+      "packages": "src/js/vendor"
     },
     "dependencies": {
       "backbone": "npm:backbone@^1.2.3",
