@@ -198,7 +198,6 @@ Do you wish to use a transpiler? [yes]:
 Which ES6 transpiler would you like to use, Babel, TypeScript or Traceur? [babel]:
 ```
 
-package.jsonにjspmの項目が追加されます。
 続いてアプリ開発に必要なモジュールをインストールします。
 
 ```
@@ -207,15 +206,22 @@ $ jspm install underscore
 $ jspm install backbone
 ```
 
+`package.json`と`config.js`にjspmの設定が追加されます。
+これ以降は`npm install`同様に設定ファイルからバージョンを指定してインストールすることが可能になります。
+
+```
+$ jspm install
+```
+
 動かしてみる
 
 JS
 ```js
 import $ from 'jquery';
-import _ from 'lodash';
+import _ from 'underscore';
 
 console.log("jQuery version: " + $.fn.jquery);
-console.log("lodash version: " + _.VERSION);
+console.log("underscore version: " + _.VERSION);
 ```
 
 index.html
@@ -223,34 +229,35 @@ index.html
 <!DOCTYPE html>
 <html>
   <head>
-    <script src="jspm_packages/system.js"></script>
-    <script src="config.js"></script>
-    <script>
-     System.import('./app');
-    </script>
   </head>
   <body>
+    <h1>Hello jspm world.</h1>
+    <section class="content js-content"></section>
+    <script src="/src/js/vendor/system.js"></script>
+    <script src="/src/js/config.js"></script>
+    <script>System.import('/src/js/app');</script>
   </body>
 </html>
 ```
 
-これを商用環境用にビルドする時はこうする。
+これを商用環境用にビルドする時は`bundle-sfx`コマンドを使います。
 ```
 $ jspm bundle-sfx --skip-source-maps --minify app js/app.js
 ```
 
 ソースマップを利用する場合は`--skip-source-maps`を外したほうがいいでしょう。
 
-
-HTMLはこうなる。
+この場合、HTMLはJSファイルを1つだけ読みこむことで自動的にスクリプトが開始されます。
 
 ```
 <!DOCTYPE html>
 <html>
   <head>
-    <script src="/js/app.js"></script>
   </head>
   <body>
+    <h1>Hello jspm world.</h1>
+    <section class="content js-content"></section>
+    <script src="/dst/js/app.js"></script>
   </body>
 </html>
 ```
